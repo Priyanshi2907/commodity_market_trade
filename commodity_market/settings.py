@@ -78,10 +78,15 @@ WSGI_APPLICATION = 'commodity_market.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'commoditymarket', # example - blog_data
+        'USER': 'root',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
+
 
 
 # Password validation
@@ -118,10 +123,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 STATIC_URL='/static/'
+#STATIC_URL='/tz/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "assets")]
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 PROJECT_DIR=os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT=os.path.join(PROJECT_DIR,'static')
+'''
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "assets")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "tz")]
+PROJECT_DIR=os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT=os.path.join(PROJECT_DIR,'tz')
+'''
+
 
 
 # Default primary key field type
